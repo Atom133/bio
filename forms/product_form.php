@@ -73,7 +73,7 @@ option:hover {
 		</tr>
 		<tr>
 			<td>
-				<label for="quantite">Quantity</label>
+				<label for="quantite">Quantity (Kgs)</label>
 			</td>
 			<td>
 				<div class="mdl-textfield mdl-js-textfield">
@@ -94,7 +94,7 @@ option:hover {
 		</tr>
 		<tr>
 			<td>
-				<label for="prix">Price</label>
+				<label for="prix">Price (TND)</label>
 			</td>
 			<td>
 				<div class="mdl-textfield mdl-js-textfield">
