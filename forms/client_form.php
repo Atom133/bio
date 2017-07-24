@@ -121,8 +121,11 @@ option:hover {
 	
 </form>
 
-
 <?php
+session_start();
+if($_SESSION['typeOFAccount'])
+	header('Location:index.php');
+
   if (isset($_POST['submitClient'])) {
 
   	$first_name = $_POST['prenom'];
