@@ -27,6 +27,13 @@ $db = new DB();
 option:hover {
 	background-color: grey
 }
+
+.selectpicker {
+	font-size: 18px;
+	color:white;
+	background-color: white;
+	padding: 10px;margin-left: 20px;
+}
 </style>
 
 <form action="#upload_produit" method="post" enctype="multipart/form-data">
@@ -56,10 +63,12 @@ option:hover {
 				<label for="categorie">Category</label>
 			</td>
 			<td>
-				<div class="mdl-textfield mdl-js-textfield">
-				  <input class="mdl-textfield__input" type="text" name="categorie" required>
-				  <label class="mdl-textfield__label" for="categorie">Category...</label>
-				</div>
+				<select class="selectpicker" style="color: black" name="categorie">
+					<option value="heathAndHygiene" selected> Health and Hygiene</option>
+					<option value="fruitsAndVegetables"> Fruits and Vegetables</option>
+					<option value="proteins"> Proteins</option>
+					<option value="beauty"> Beauty</option>
+				</select>
 			</td>
 		</tr>
 		<tr>
