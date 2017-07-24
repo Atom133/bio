@@ -2,6 +2,11 @@
 require 'db.class.php';
 $db = new DB();
 ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title></title>
+
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
 <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
@@ -28,6 +33,8 @@ option:hover {
 	background-color: grey
 }
 </style>
+</head>
+<body>
 <form action="#upload_client" method="post">
 <br><br><br><br><br><br><br>
 	<h1>Client</h1>
@@ -43,7 +50,7 @@ option:hover {
 			</td>
 			<td>
 				<div class="mdl-textfield mdl-js-textfield">
-				  <input class="mdl-textfield__input" type="text" name="nom">
+				  <input class="mdl-textfield__input" type="text" name="nom" required>
 				  <label class="mdl-textfield__label" for="nom">Last name...</label>
 				</div>
 			</td>
@@ -54,7 +61,7 @@ option:hover {
 			</td>
 			<td>
 				<div class="mdl-textfield mdl-js-textfield">
-				  <input class="mdl-textfield__input" type="text" name="prenom">
+				  <input class="mdl-textfield__input" type="text" name="prenom" required>
 				  <label class="mdl-textfield__label" for="prenom">First name..</label>
 				</div>
 			</td>
@@ -66,7 +73,7 @@ option:hover {
 			</td>
 			<td>
 				<div class="mdl-textfield mdl-js-textfield">
-				  <input class="mdl-textfield__input" type="text" name="email">
+				  <input class="mdl-textfield__input" type="email" name="email" required>
 				  <label class="mdl-textfield__label" for="email">e-mail...</label>
 				</div>
 			</td>
@@ -77,7 +84,7 @@ option:hover {
 			</td>
 			<td>
 				<div class="mdl-textfield mdl-js-textfield">
-				  <input class="mdl-textfield__input" type="password" name="password">
+				  <input class="mdl-textfield__input" type="password" name="password" required>
 				  <label class="mdl-textfield__label" for="password">Password...</label>
 				</div>
 			</td>
@@ -88,7 +95,7 @@ option:hover {
 			</td>
 			<td>
 				<div class="mdl-textfield mdl-js-textfield">
-				  <input class="mdl-textfield__input" type="password" name="repeat_password">
+				  <input class="mdl-textfield__input" type="password" name="repeat_password" required>
 				  <label class="mdl-textfield__label" for="repeat_password">Repeat Password...</label>
 				</div>
 			</td>
@@ -99,7 +106,7 @@ option:hover {
 			</td>
 			<td>
 				<div class="mdl-textfield mdl-js-textfield">
-				  <input class="mdl-textfield__input" type="text" name="adresse">
+				  <input class="mdl-textfield__input" type="text" name="adresse" required>
 				  <label class="mdl-textfield__label" for="adresse">adresse...</label>
 				</div>
 			</td>
@@ -138,7 +145,7 @@ option:hover {
 			</td>
 			<td>
 				<div class="mdl-textfield mdl-js-textfield">
-				  <input class="mdl-textfield__input" type="text" name="company_name">
+				  <input class="mdl-textfield__input" type="text" name="company_name" required>
 				  <label class="mdl-textfield__label" for="company_name">Company Name...</label>
 				</div>
 			</td>
@@ -151,7 +158,7 @@ option:hover {
 			</td>
 			<td>
 				<div class="mdl-textfield mdl-js-textfield">
-				  <input class="mdl-textfield__input" type="text" name="email">
+				  <input class="mdl-textfield__input" type="email" name="email" required>
 				  <label class="mdl-textfield__label" for="email">e-mail...</label>
 				</div>
 			</td>
@@ -162,7 +169,7 @@ option:hover {
 			</td>
 			<td>
 				<div class="mdl-textfield mdl-js-textfield">
-				  <input class="mdl-textfield__input" type="password" name="password">
+				  <input class="mdl-textfield__input" type="password" name="password" required>
 				  <label class="mdl-textfield__label" for="password">Password...</label>
 				</div>
 			</td>
@@ -173,7 +180,7 @@ option:hover {
 			</td>
 			<td>
 				<div class="mdl-textfield mdl-js-textfield">
-				  <input class="mdl-textfield__input" type="password" name="repeat_password">
+				  <input class="mdl-textfield__input" type="password" name="repeat_password" required>
 				  <label class="mdl-textfield__label" for="repeat_password">Repeat Password...</label>
 				</div>
 			</td>
@@ -184,7 +191,7 @@ option:hover {
 			</td>
 			<td>
 				<div class="mdl-textfield mdl-js-textfield">
-				  <input class="mdl-textfield__input" type="text" name="adresse">
+				  <input class="mdl-textfield__input" type="text" name="adresse" required>
 				  <label class="mdl-textfield__label" for="adresse">adresse...</label>
 				</div>
 			</td>
@@ -195,7 +202,7 @@ option:hover {
 			</td>
 			<td>
 				<div class="mdl-textfield mdl-js-textfield">
-				  <input class="mdl-textfield__input" type="text" name="description">
+				  <input class="mdl-textfield__input" type="text" name="description" required>
 				  <label class="mdl-textfield__label" for="description">Description...</label>
 				</div>
 			</td>
@@ -232,7 +239,7 @@ option:hover {
 			</td>
 			<td>
 				<div class="mdl-textfield mdl-js-textfield">
-				  <input class="mdl-textfield__input" type="text" name="nom_prod">
+				  <input class="mdl-textfield__input" type="text" name="nom_prod" required>
 				  <label class="mdl-textfield__label" for="nom_prod">Product Name...</label>
 				</div>
 			</td>
@@ -245,7 +252,7 @@ option:hover {
 			</td>
 			<td>
 				<div class="mdl-textfield mdl-js-textfield">
-				  <input class="mdl-textfield__input" type="text" name="categorie">
+				  <input class="mdl-textfield__input" type="text" name="categorie" required>
 				  <label class="mdl-textfield__label" for="categorie">Category...</label>
 				</div>
 			</td>
@@ -256,7 +263,7 @@ option:hover {
 			</td>
 			<td>
 				<div class="mdl-textfield mdl-js-textfield">
-				  <input class="mdl-textfield__input" type="number" name="quantite">
+				  <input class="mdl-textfield__input" type="number" name="quantite" required>
 				  <label class="mdl-textfield__label" for="quantite">Quantity...</label>
 				</div>
 			</td>
@@ -267,7 +274,7 @@ option:hover {
 			</td>
 			<td>
 				<div class="mdl-textfield mdl-js-textfield">
-				  <input class="mdl-textfield__input" type="date" name="date_exp">
+				  <input class="mdl-textfield__input" type="date" name="date_exp" required>
 				</div>
 			</td>
 		</tr>
@@ -277,7 +284,7 @@ option:hover {
 			</td>
 			<td>
 				<div class="mdl-textfield mdl-js-textfield">
-				  <input class="mdl-textfield__input" type="number" name="prix">
+				  <input class="mdl-textfield__input" type="number" name="prix" required>
 				  <label class="mdl-textfield__label" for="prix">Price...</label>
 				</div>
 			</td>
@@ -288,7 +295,7 @@ option:hover {
 			</td>
 			<td>
 				<div class="mdl-textfield mdl-js-textfield">
-				  <input class="mdl-textfield__input" type="text" name="description">
+				  <input class="mdl-textfield__input" type="text" name="description" required>
 				  <label class="mdl-textfield__label" for="prix">Description...</label>
 				</div>
 			</td>
@@ -299,7 +306,7 @@ option:hover {
 			</td>
 			<td>
 				<div class="mdl-textfield mdl-js-textfield">
-				  <input class="mdl-textfield__input" type="file" name="image1">
+				  <input class="mdl-textfield__input" type="file" name="image1" required>
  				</div>
 			</td>
 		</tr>
@@ -427,3 +434,6 @@ option:hover {
 	  }
 	?>
 </div>
+
+</body>
+</html>
