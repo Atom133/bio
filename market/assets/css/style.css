@@ -10827,6 +10827,13 @@ form [disabled] .checkbox input[type=radio] + label:before {
   height: 1px;
   background-color: #efefef;
 }
+.ct-gallery-filters .ct-gallery-filters-decoration:last-child {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  margin-top: -2px;
+  border-bottom: none;
+}
 .ct-gallery-filters .ct-gallery-filters-decoration:before {
   top: 2px;
 }
@@ -10838,7 +10845,7 @@ form [disabled] .checkbox input[type=radio] + label:before {
   position: relative;
 }
 .ct-gallery-filters .ct-gallery-filters-list li {
-  margin-left: 9.9%;
+  margin-left: 6.9%;
   padding: 0;
 }
 .ct-gallery-filters .ct-gallery-filters-list li:first-child {
