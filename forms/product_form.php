@@ -171,7 +171,7 @@ option:hover {
 	  	$quantite = $_POST['quantite'];
 	  	$exp_date = $_POST['date_exp'];
 	  	$prix = $_POST['prix'];
-	  	$description = $_POST['description'];
+	  	$description = htmlentities(trim($_POST['description']));
 
 		$timestamp = strtotime($_POST['date_exp']);
 		$date=date("Y-m-d", $timestamp);
