@@ -157,6 +157,83 @@ $result_sql = $db->query($sql);
                                     <i class="fa fa-circle"></i> Mixed Freshly Harvested Salad Types
                                 </li>
                             </ul>
+
+
+
+                    <div class="container">
+                        <div class="row">
+        
+                            <style type="text/css">
+                             #quantity,.quantity-left-minus,.quantity-right-plus{
+                                    font-size: 10px;width: 10vh; height: 30px;
+                                }
+                            </style>
+                            <br><br><br><br>
+        
+                            <form action="ok.php" method="post">
+                                            <div class="col-lg-2">
+                                                            <div class="input-group">
+                                                        <span class="input-group-btn">
+                                                            <button type="button" class="quantity-left-minus btn btn-danger btn-number"  data-type="minus" data-field="" >
+                                                              <span class="glyphicon glyphicon-minus"></span>
+                                                            </button>
+                                                        </span>
+                                                        <input type="text" id="quantity" name="quantity"  value="0" min="1" max="100" style="width: 10vh; height: 30px">
+                                                        <span class="input-group-btn">
+                                                            <button type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus" data-field="" >
+                                                                <span class="glyphicon glyphicon-plus"></span>
+                                                            </button>
+                                                        </span>
+                                                         <input type="submit" value ="Order Now" name="a" class="btn btn-lg ct-btn-image btn-warning" id="btn" style="font-size: 20px;margin-left: 20vh">
+                                                       
+                     
+                                                    </div>
+                                            </div>
+                            </form>
+                        </div>
+                    </div>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+
+var quantitiy=0;
+   $('.quantity-right-plus').click(function(e){
+        
+        // Stop acting like a button
+        e.preventDefault();
+        // Get the field name
+        var quantity = parseInt($('#quantity').val());
+        
+        // If is not undefined
+            
+            $('#quantity').val(quantity + 1);
+
+          
+            // Increment
+        
+    });
+
+     $('.quantity-left-minus').click(function(e){
+        // Stop acting like a button
+        e.preventDefault();
+        // Get the field name
+        var quantity = parseInt($('#quantity').val());
+        
+        // If is not undefined
+      
+            // Increment
+            if(quantity>0){
+            $('#quantity').val(quantity - 1);
+            }
+    });
+    
+});
+</script>
+
+
+
+
+                            
                         </div>
                     </div>
                 </div>
