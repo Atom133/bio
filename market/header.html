@@ -159,6 +159,53 @@ fieldset, label { margin: 0; padding: 0; }
                 </a>
             </div>
 
+<style type="text/css">
+  
+  .dropbtn {
+    background-color: transparent;
+    color: white;
+    padding: 2px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #99cd4d;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 2px 4px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #99cd4d}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+</style>
+
+
             <ul class="nav navbar-nav navbar-left ct-navbar--fadeInLeft" style="padding-bottom: 35px;">
                 <li class="onepage active"><a href="index.php">Home</a></li>
                 <li class="onepage"><a href="about-us.php">About</a></li>
@@ -166,8 +213,38 @@ fieldset, label { margin: 0; padding: 0; }
                 <li class="onepage"><a href="our-products.php">Products</a></li>
                 <li class="onepage"><a href="#services">Services</a></li>
                 <li class="onepage"><a href="contact-us.php">Contact</a></li>
-                <li><a href="forms/login.php">Sign In</a></li>
+
+<?php
+
+
+if (isset($_SESSION['login']) && $_SESSION['login']  ){
+
+?>
+
+                <div class="dropdown">
+  <button class="dropbtn">Hello <?php if (isset($_SESSION['nom'])) echo $_SESSION['nom']; else echo $_SESSION['company_name'] ;?> </button>
+  <div class="dropdown-content">
+    <a href="logout.php" class="glyphicon glyphicon-off"> Disconnect</a>
+    <a href="panier.php" class ="glyphicon glyphicon-shopping-cart"> My basket</a>
+  </div>
+</div>
+
+                <?php
+                }
+                else{
+
+                ?>
+
+
+
+
+                <li><a href="javascript:slideonlyone('newboxes3');" id="signin">Sign In</a></li>
                 <li><a href="#exampleModal" data-toggle="modal" data-target = "#exampleModal" data-backdrop="false"> Sign Up</a></li>
+
+<?php } ?>
+
+
+
             </ul>
         </div>
     </nav>
@@ -399,6 +476,49 @@ fieldset, label { margin: 0; padding: 0; }
 </div>
 
 
+
+<div class="newboxes3" id="newboxes3" style="padding: 5px; display: none;">
+ 
+<center style="margin-top: 10vh">
+  <form action="../forms/login.php" method="post">
+<br><br><br><br><br><br><br>
+  <h1>Sign In</h1>
+  <br><br>
+  <table>
+    <tr>
+      <td>
+        <label for="email">E-mail</label>
+      </td>
+      <td>
+        <div class="mdl-textfield mdl-js-textfield">
+          <input class="mdl-textfield__input" type="email" name="email" required>
+          <label class="mdl-textfield__label" for="email">E-mail...</label>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <label for="password">Password</label>
+      </td>
+      <td>
+        <div class="mdl-textfield mdl-js-textfield">
+          <input class="mdl-textfield__input" type="password" name="password" required>
+          <label class="mdl-textfield__label" for="password">Password..</label>
+        </div>
+      </td>
+    </tr>
+
+    <tr><td></td><td><button type="submit" name="submitLogin" value="submitLogin" class="btn btn-default btn-block" >Log In</button></td></tr>
+  </table>
+
+  
+</form>
+
+</center>
+</div>
+
+
+
 <script type="text/javascript">
     $(document).ready(function() {
      $('#client').click(function() {
@@ -408,6 +528,10 @@ fieldset, label { margin: 0; padding: 0; }
           );
           $('#exampleModal').modal('hide');
           $('#newboxes2').css({
+               display: 'none'
+               }, 1000
+          );
+           $('#newboxes3').css({
                display: 'none'
                }, 1000
           );
@@ -444,9 +568,34 @@ fieldset, label { margin: 0; padding: 0; }
                display: 'none'
                }, 1000
           );
+           $('#newboxes3').css({
+               display: 'none'
+               }, 1000
+          );
 
      });
 });
+
+        $(document).ready(function() {
+     $('#signin').click(function() {
+          $('#newboxes3').animate({
+               height: 'toggle'
+               }, 1000
+          );
+          $('#exampleModal').modal('hide');
+          $('#newboxes1').css({
+               display: 'none'
+               }, 1000
+          );
+           $('#newboxes2').css({
+               display: 'none'
+               }, 1000
+          );
+     });
+});
+
+
+
 </script>
 <div id="upload_fournisseur">
 
