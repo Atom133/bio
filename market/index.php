@@ -2,6 +2,11 @@
 require 'header.html';    
  ?>  
 
+<style type="text/css">
+.ct-u-marginTop10 {
+    margin-top: 10%
+}
+</style>
 
 <section class="ct-u-marginTop10 ct-u-marginBottom80 section" id="home">
     <div class="ct-mediaSection" data-height="522" data-type="video"

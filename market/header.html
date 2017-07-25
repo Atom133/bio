@@ -1,3 +1,8 @@
+<?php
+session_start();
+require '../forms/db.class.php';
+$db = new DB();
+?>
 <!DOCTYPE html>
 <!--[if IE 8 ]>
 <html class="no-js ie8" lang="en"> <![endif]-->
@@ -22,14 +27,82 @@
 
     <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <!--  <link rel="stylesheet" type="text/css" href="assets/css/motive.css">
 
     <!--[if lt IE 9]>
     <script src="assets/bootstrap/js/html5shiv.min.js"></script>
     <script src="assets/bootstrap/js/respond.min.js"></script>
     <![endif]-->
+    <style type="text/css">
+
+
+        @import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
+
+body {margin-top: -80px;padding-top: 20px}
+
+fieldset, label { margin: 0; padding: 0; }
+/****** Style Star Rating Widget *****/
+
+.rating { 
+  border: none;
+  float: left;
+}
+
+.rating > input { display: none; } 
+.rating > label:before { 
+  margin: 5px;
+  font-size: 1.25em;
+  font-family: FontAwesome;
+  display: inline-block;
+  content: "\f005";
+}
+
+.rating > .half:before { 
+  content: "\f089";
+  position: absolute;
+}
+
+.rating > label { 
+  color: #ddd; 
+ float: right; 
+}
+
+/***** CSS Magic to Highlight Stars on Hover *****/
+
+.rating > input:checked ~ label, /* show gold star when clicked */
+.rating:not(:checked) > label:hover, /* hover current star */
+.rating:not(:checked) > label:hover ~ label { color: #FFD700;  } /* hover previous stars in list */
+
+.rating > input:checked + label:hover, /* hover current star when changing rating */
+.rating > input:checked ~ label:hover,
+.rating > label:hover ~ input:checked ~ label, /* lighten current selection */
+.rating > input:checked ~ label:hover ~ label { color: #FFED85;  } 
+
+    </style>
+
+<?php
+
+    if(isset($_GET['nomprod']))
+    {
+        $nom = $_GET['nomprod'];
+        $sql = "SELECT * FROM produits WHERE nom_prod = '$nom'";
+        $prodDetails = $db->query($sql);
+            if(($prodDetails[0]->total) > 0)
+            {
+                if(($prodDetails[0]->rate)/($prodDetails[0]->total) > 0)
+                    echo '<style> .rating > .star'.round($prodDetails[0]->rate/$prodDetails[0]->total).' ~ label { color: #FFED85;  } </style>' ;
+            }
+        }
+        
+    
+
+?>
 
     <script src="assets/js/modernizr.custom.js"></script>
+
+
+
 </head>
 <body class="cssAnimate navbar--transparent navbar--fixedTop navbar-onepage">
 <div class="ct-preloader"><div class="ct-preloader-content"></div></div>
@@ -48,7 +121,7 @@
     <ul class="ct-menuMobile-navbar list-unstyled ct-u-backgroundDarkGray">
         <li><a href="index.php">Home</a></li>
         <li><a href="about-us.php">About</a></li>
-        <li><a href="SingleProduct.php">Fresh Products</a></li>
+        <li><a href="our-products.php">Fresh Products</a></li>
         <li><a href="BoxProducts.php">Products</a></li>
         <li><a href="#services">Services</a></li>
         <li><a href="contact-us.php">Contact</a></li>
@@ -59,12 +132,12 @@
 <header class="ct-mainHeader">
 
 
-    <nav class="navbar navbar-default navbar--type2 yamm" style="padding-top:40px">
+    <nav class="navbar navbar-default navbar--type2 yamm" style="padding-top: 60px;margin-bottom: 20px">
 
         <div class="container ct-navbar-container">
 
             <form class="navbar-form navbar-right" role="search">
-                <div class="input-group">
+                <div class="input-group" style="margin-top: -10px">
                     <input type="text" class="form-control" placeholder="Search for...">
                         <span class="input-group-btn">
                             <button class="btn btn-default" type="button"><i class="fa fa-search"></i></button>
@@ -78,11 +151,11 @@
                 </a>
             </div>
 
-            <ul class="nav navbar-nav navbar-left ct-navbar--fadeInLeft">
+            <ul class="nav navbar-nav navbar-left ct-navbar--fadeInLeft" style="padding-bottom: 35px;">
                 <li class="onepage active"><a href="index.php">Home</a></li>
                 <li class="onepage"><a href="about-us.php">About</a></li>
                 <li class="onepage"><a href="BoxProducts.php">Fresh Boxes</a></li>
-                <li class="onepage"><a href="SingleProduct.php">Products</a></li>
+                <li class="onepage"><a href="our-products.php">Products</a></li>
                 <li class="onepage"><a href="#services">Services</a></li>
                 <li class="onepage"><a href="contact-us.php">Contact</a></li>
             </ul>

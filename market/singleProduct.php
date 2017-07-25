@@ -1,5 +1,7 @@
-
- <?php require "header.html";?> 
+<?php require "header.html";
+$sql = "SELECT * FROM produits ";
+$products = $db->query($sql);
+?> 
 <section class="container section ct-u-marginBottom10" id="products" >
     <h3 class="ct-headline text-center" style="padding:250px">
         <span class="ct-headline-container ct-u-colorMotive">
@@ -40,6 +42,7 @@
             </div>
         </div>
     </article>
+    
 
     <article class="ct-gallery-item ct-portfolio-item frozen" style="position: absolute; left: 389px; top: 0px;">
 
@@ -60,7 +63,7 @@
                         </div>
 
                         <div class="text-center">
-                            <a href="single-product.html" class="btn ct-btn-image btn-warning"><span><i class="fa fa-book"></i> Read More</span></a>
+                            <a href="single-product.php" class="btn ct-btn-image btn-warning"><span><i class="fa fa-book"></i> Read More</span></a>
                         </div>
                     </section>
                 </div>
