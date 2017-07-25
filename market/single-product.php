@@ -66,7 +66,6 @@ $result_sql = $db->query($sql);
                         <div class="ct-portfolio-SingleItem-title">
                             <h3><span><?=$nom_prod?></span></h3>
                         </div>
-
                         <fieldset class="rating">
                           <input type="radio" id="star5" name="rating" class="star star5" rat="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
                           
@@ -249,6 +248,16 @@ $(".star").click(function(e) {
     });
 });
   </script>
+
+
+<script type="text/javascript">
+form = document.getElementById("formorder");
+
+function form1() {
+    form.action="index.php";
+    form.submit();
+}
+</script>
 
 
 <?php require "footer.html";?>
