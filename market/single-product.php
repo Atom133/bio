@@ -307,7 +307,7 @@ foreach($productsInSameCategory as $prod) :?>
 </section>
 </div>
 
-<?php var_dump($_GET['nomprod']);?>
+
 <script type="text/javascript">
 $(".star").click(function(e) {
    $.ajax({

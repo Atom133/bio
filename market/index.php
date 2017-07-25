@@ -37,7 +37,7 @@ require 'header.html';
 
 
                                 <div class="text-right">
-                                    <a href="about-us.html" class="btn btn-lg ct-btn-image btn-warning"><span>Read About Us</span></a>
+                                    <a href="about-us.php" class="btn btn-lg ct-btn-image btn-warning"><span>Read About Us</span></a>
                                 </div>
                             </header>
                         </div>
