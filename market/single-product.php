@@ -166,7 +166,6 @@ $result_sql = $db->query($sql);
     </div>
 </section>
 
-
 <?require "section.html";?>
 
 <section class="container">

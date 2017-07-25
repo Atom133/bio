@@ -29,25 +29,25 @@ $products = $db->query($sql);
 <div class="container">
     <div class="ct-gallery-filters">
         <div class="ct-gallery-filters-decoration"></div>
-        <ul class="ct-gallery-filters-list list-unstyled list-inline">
+        <ul class="ct-gallery-filters-list list-unstyled list-inline" >
             <li>
-                <a href="#" class="btn btn-motive btn-sm ct-btn-rounded ct-btn-transparent ct-hover--outlineOut" data-filter="*"><span>new ones</span></a>
+                <a href="#" class="btn btn-motive btn-sm ct-btn-rounded ct-btn-transparent ct-hover--outlineOut" data-filter="*" style="font-size: 30px"><span>new ones</span></a>
             </li>
 
             <li>
-                <a href="#" class="btn btn-motive btn-sm ct-btn-rounded ct-btn-transparent ct-hover--outlineOut" data-filter=".saladsGreens"><span>salads + greens</span></a>
+                <a href="#" class="btn btn-motive btn-sm ct-btn-rounded ct-btn-transparent ct-hover--outlineOut" data-filter=".healthAndHygiene" style="font-size: 30px"><span>Health + Hygiene</span></a>
             </li>
 
             <li>
-                <a href="#" class="btn btn-motive btn-sm ct-btn-rounded ct-btn-transparent ct-hover--outlineOut" data-filter=".fresh"><span>fresh</span></a>
+                <a href="#" class="btn btn-motive btn-sm ct-btn-rounded ct-btn-transparent ct-hover--outlineOut" data-filter=".fruitsAndVegetables" style="font-size: 30px"><span>Fruits + Vegetables</span></a>
             </li>
 
             <li>
-                <a href="#" class="btn btn-motive btn-sm ct-btn-rounded ct-btn-transparent ct-hover--outlineOut" data-filter=".frozen"><span>frozen</span></a>
+                <a href="#" class="btn btn-motive btn-sm ct-btn-rounded ct-btn-transparent ct-hover--outlineOut" data-filter=".proteins" style="font-size: 30px"><span>Proteins</span></a>
             </li>
 
             <li>
-                <a href="#" class="btn btn-motive btn-sm ct-btn-rounded ct-btn-transparent ct-hover--outlineOut" data-filter=".dried"><span>dried</span></a>
+                <a href="#" class="btn btn-motive btn-sm ct-btn-rounded ct-btn-transparent ct-hover--outlineOut" data-filter=".beauty" style="font-size: 30px"><span>Beauty</span></a>
             </li>
         </ul>
     </div>
@@ -59,7 +59,7 @@ $products = $db->query($sql);
 <div class="ct-gallery ct-portfolio-container ct-portfolio-masonry ct-portfolio-masonry--col3">
     
 <?php foreach($products as $product):?>
-    <article class="ct-gallery-item ct-portfolio-item fresh">
+    <article class="ct-gallery-item ct-portfolio-item <?= $product->categorie?>">
 
         <div class="ct-portfolio-item-outer">
             <div class="ct-portfolio-item-media">
