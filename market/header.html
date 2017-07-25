@@ -129,7 +129,7 @@ fieldset, label { margin: 0; padding: 0; }
         <li><a href="about-us.php">About</a></li>
         <li><a href="our-products.php">Fresh Products</a></li>
         <li><a href="BoxProducts.php">Products</a></li>
-        <li><a href="#services">Services</a></li>
+        <li><a href="donations.php">Donate</a></li>
         <li><a href="contact-us.php">Contact</a></li>
         <li><a href="forms/login.php">Sign In</a></li>
         <li><a href="#exampleModal" data-toggle="modal" data-target = "#exampleModal" data-backdrop="false"> Sign Up</a></li>
@@ -144,7 +144,7 @@ fieldset, label { margin: 0; padding: 0; }
 
         <div class="container ct-navbar-container">
 
-            <form class="navbar-form navbar-right" role="search" action="searchphp" method="post">
+            <form class="navbar-form navbar-right" role="search" action="search.php" method="post">
                 <div class="input-group" style="margin-top: -10px">
                     <input type="text" class="form-control" placeholder="Search for..." name="recherche">
                         <span class="input-group-btn">
@@ -211,7 +211,7 @@ fieldset, label { margin: 0; padding: 0; }
                 <li class="onepage"><a href="about-us.php">About</a></li>
                 <li class="onepage"><a href="BoxProducts.php">Fresh Boxes</a></li>
                 <li class="onepage"><a href="our-products.php">Products</a></li>
-                <li class="onepage"><a href="#services">Services</a></li>
+                <li class="onepage"><a href="donations.php">Donate</a></li>
                 <li class="onepage"><a href="contact-us.php">Contact</a></li>
 
 <?php
@@ -225,6 +225,7 @@ if (isset($_SESSION['login']) && $_SESSION['login']  ){
   <button class="dropbtn">Hello <?php if (isset($_SESSION['nom'])) echo $_SESSION['nom']; else echo $_SESSION['company_name'] ;?> </button>
   <div class="dropdown-content">
     <a href="logout.php" class="glyphicon glyphicon-off"> Disconnect</a>
+	<a href="provider.php" class="glyphicon glyphicon-user"> Profile</a>
     <a href="panier.php" class ="glyphicon glyphicon-shopping-cart"> My basket</a>
   </div>
 </div>

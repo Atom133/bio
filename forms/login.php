@@ -21,6 +21,7 @@
       {
         $_SESSION['login']=true;
         $_SESSION['company_name'] = $res[0]->company_name ;
+		$_SESSION['id_four'] = $res[0]->id_four; ;
         $_SESSION['typeOFAccount'] = "Provider";
         header('Location:../market/index.php');
       }

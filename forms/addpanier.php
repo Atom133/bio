@@ -1,5 +1,9 @@
 <?php
-require '../market/header.html';
+session_start();
+require '../forms/db.class.php';
+require '../forms/panier.class.php';
+$db = new DB();
+$panier = new panier($db);
 
 if(isset($_POST['quantity']) && isset($_POST['id']))
 {
