@@ -1,5 +1,6 @@
 <?php
 require 'db.class.php';
+require "../market/header.html";
 $db = new DB();
 ?>
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -28,7 +29,7 @@ option:hover {
 	background-color: grey
 }
 </style>
-<form action="#upload_fournisseur" method="post" enctype="multipart/form-data">
+<form action="#upload_product" method="post" enctype="multipart/form-data">
 <br><br><br><br><br><br><br>
 	<h1>Fournisseur</h1>
 	<br><br>

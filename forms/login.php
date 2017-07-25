@@ -61,10 +61,12 @@
 			}
 			else if($res = $db->query($sql_four))
 			{
-				
-				$_SESSION['company_name'] = $res['company_name'];
+             
+				$_SESSION['company_name'] = $res[0]->company_name;
 				$_SESSION['typeOFAccount'] = "Provider";
-				header('Location:client_form.php');
+                $_SESSION['id_four'] = $res[0]->id_four;
+                //header('Location:provider_form.php');
+				header('Location:../market/provider.php');
 			}
 			else
 				die('erreur');
