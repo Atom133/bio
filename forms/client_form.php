@@ -173,9 +173,6 @@ option:hover {
 
 <?php
 
-if($_SESSION['typeOFAccount'])
-;
-
   if (isset($_POST['submitClient'])) {
 
   	$first_name = $_POST['prenom'];

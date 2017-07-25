@@ -383,7 +383,7 @@ fieldset, label { margin: 0; padding: 0; }
             </td>
             <td>
                 <div class="mdl-textfield mdl-js-textfield">
-                  <input class="mdl-textfield__input" type="file" name="logo">
+                  <input class="mdl-textfield__input" type="file" name="logo" required>
                 </div>
             </td>
         </tr>
@@ -446,4 +446,54 @@ fieldset, label { margin: 0; padding: 0; }
      });
 });
 </script>
+<div id="upload_fournisseur">
 
+<?php
+
+  if (isset($_POST['submitClient'])) {
+
+    $first_name = $_POST['prenom'];
+    $last_name = $_POST['nom'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $adresse = $_POST['adresse'];
+    $carte_paiement = $_POST['carte_paiement'];
+
+
+    
+      $sql = "INSERT INTO client(nom,prenom,email,password,adresse,carte_paiement) VALUES ('$first_name','$last_name','$email','$password','$adresse','$carte_paiement')";
+
+      $db->update($sql);
+  }
+?>
+</div>
+<div id="upload_fournisseur">
+    
+
+<?php
+  if (isset($_POST['submitFournisseur'])) {
+
+    $company_name = $_POST['company_name'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $adresse = $_POST['adresse'];
+    $description = $_POST['description'];
+
+
+    $tmp_name = $_FILES['logo']['tmp_name'];
+    $filename = "../forms/fournisseurs/". $company_name . ".jpg";
+    if(!is_dir('fournisseurs'))
+        mkdir('fournisseurs');
+    if (move_uploaded_file($tmp_name,$filename)) {  
+      echo "Uploaded Complete ♥ ☺";
+      $sql = "INSERT INTO fournisseur(company_name,email,password,adresse,description,logo) VALUES ('$company_name','$email','$password','$adresse','$description','$filename')";
+     $db->update($sql);
+     var_dump(move_uploaded_file($tmp_name,$filename));
+    }
+    else {
+      
+      
+    }
+  }
+?>
+</div>
