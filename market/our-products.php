@@ -35,7 +35,7 @@ $products = $db->query($sql);
             </li>
 
             <li>
-                <a href="#" class="btn btn-motive btn-sm ct-btn-rounded ct-btn-transparent ct-hover--outlineOut" data-filter=".healthAndHygiene" style="font-size: 30px"><span>Health + Hygiene</span></a>
+                <a href="#" class="btn btn-motive btn-sm ct-btn-rounded ct-btn-transparent ct-hover--outlineOut" data-filter=".heathAndHygiene" style="font-size: 30px"><span>Health + Hygiene</span></a>
             </li>
 
             <li>
@@ -73,7 +73,7 @@ $products = $db->query($sql);
                     <section>
                         <div class="ct-portfolio-item-title">
                             <a href="single-product.html">
-                                <h6><span>Bunch Of Radishes In A Wooden Box</span></h6>
+                                <h6><span><?=$product->nom_prod;?></span></h6>
                             </a>
                         </div>
 

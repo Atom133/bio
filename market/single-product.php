@@ -76,7 +76,6 @@ $result_sql = $db->query($sql);
                           <input type="radio" id="star2" name="rating" class="star star2" rat="2" /><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
                           
                           <input type="radio" id="star1" name="rating" class="star star1" rat="1" /><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
-                          
                         </fieldset>
                             <span><?php
                                         if(($result_sql[0]->total) > 0)
@@ -170,7 +169,7 @@ $result_sql = $db->query($sql);
                             </style>
                             <br><br><br><br>
         
-                            <form action="ok.php" method="post">
+                            <form action="../forms/addpanier.php" method="post">
                                             <div class="col-lg-2">
                                                             <div class="input-group">
                                                         <span class="input-group-btn">
@@ -184,7 +183,10 @@ $result_sql = $db->query($sql);
                                                                 <span class="glyphicon glyphicon-plus"></span>
                                                             </button>
                                                         </span>
-                                                         <input type="submit" value ="Order Now" name="a" class="btn btn-lg ct-btn-image btn-warning" id="btn" style="font-size: 20px;margin-left: 20vh">
+                                                        <input type="text" name="id" value="<?= $result_sql[0]->id_prod?>" hidden>
+                                                         
+                                                            <input type="submit" value ="ADD TO BASKET" name="a" class="btn btn-lg ct-btn-image btn-warning" id="btn" style="font-size: 20px;margin-left: 20vh">
+                                                         
                                                        
                      
                                                     </div>

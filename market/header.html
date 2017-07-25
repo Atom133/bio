@@ -1,7 +1,9 @@
 <?php
 session_start();
 require '../forms/db.class.php';
+require '../forms/panier.class.php';
 $db = new DB();
+$panier = new panier($db);
 ?>
 <!DOCTYPE html>
 <!--[if IE 8 ]>

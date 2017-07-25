@@ -1,18 +1,19 @@
 <?php
-require 'header.html';
+require '../market/header.html';
 
-if(isset($_GET['nomprod']) && isset($_GET['quantity']))
+if(isset($_POST['quantity']) && isset($_POST['id']))
 {
-	$product = $DB->query('SELECT id FROM produuits WHERE nom_prod=:nom', array('nom' => $_GET['nomprod']));
-	if(empty($product))
-		die("Ce produit n'existe pas");
+	$qte = $_POST['quantity'];
+	$id = $_POST['id'];
 
 
-	$panier->add($product[0]->nom_prod , $_GET['quantity']);
-	die("<script>setTimeout(\"location.href = 'indexphp.php';\",0);</script>"); 
+	$panier->add($id , $qte);
+
+	die("<script>setTimeout(\"location.href = '../market/our-products.php';\",0);</script>"); 
+	
 }
 else
 	{
-		die('Vous n\'avez pas selectionne de produit a ajouter au panier');
+		die("<script>setTimeout(\"location.href = '../market/index.php';\",0);</script>");
 	}
 ?>

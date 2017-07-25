@@ -20,18 +20,18 @@ class panier{
 			$this->del($_GET['delPanier']);
 	}
 
-    public function add($product_nom,$qte){
-    	if(isset($_SESSION['panier'][$product_nom]))
+    public function add($product_id,$qte){
+    	if(isset($_SESSION['panier'][$product_id]))
     	{
-    		$_SESSION['panier'][$product_nom] += $qte;
+    		$_SESSION['panier'][$product_id] += $qte;
     	}
     	else
-    		$_SESSION['panier'][$product_nom] = $qte;
+    		$_SESSION['panier'][$product_id] = 0 + $qte;
     }
 
 
-    public function del($product_nom){
-    	unset($_SESSION['panier'][$product_nom]);
+    public function del($product_id){
+    	unset($_SESSION['panier'][$product_id]);
     }
 
     public function total(){
